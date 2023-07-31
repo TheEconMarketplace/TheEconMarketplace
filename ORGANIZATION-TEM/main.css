@@ -1,0 +1,1389 @@
+/*Downloaded fonts*/
+@import url('https://fonts.googleapis.com/css?family=Signika+Negative&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=BioRhyme&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+/*html, body, scroll*/
+::-webkit-scrollbar {
+    width: 0px;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/*This is for the index page specifically*/
+
+#index {
+    color: rgb(72, 61, 61); 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+    position: absolute; 
+    font-size: 350%; 
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-weight: bolder; 
+    animation-name: bigger;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(.7,-0.04,.44,1.58);
+    width: 100%;
+}
+
+#circle1 {
+    background-color: rgb(175,214,155);
+}
+#circle2 {
+    background-color: rgb(183,204,157);
+}
+#circle1, #circle2, #circle3 {
+    position: fixed;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    border-radius: 100%;
+    width: 1;
+    opacity: 0;
+}
+
+/*Makes the text bigger on start*/
+@keyframes bigger {
+    0% {
+        font-size: 0.001px;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        font-size: 350%;
+    }
+}
+/*Uncalled, Makes the text disappear*/
+@keyframes smaller {
+    0% {
+        opacity: 1;
+        font-size: 100%;
+    }
+    100% {
+        font-size: 0.001px;
+        opacity: 0;
+    }
+}
+/*Animation for next page*/
+@keyframes nextPage {
+    0% {
+        opacity: 0.4;
+        width: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 3000px;
+        height: 3000px;
+    }
+}
+/*Animation for onload*/
+@keyframes onLoad {
+    0% {
+        opacity: 0.7;
+        width: 3000px;
+        height: 3000px;
+    }
+    100% {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+
+
+/*HomePage:*/
+/*Header styles*/
+header {
+    height: 110%; 
+    width: 100vw; 
+    background-image: url(images/Cover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0 0 0 0;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+}
+header #effect {
+    position: absolute;
+    background-color: rgba(101, 104, 80, 0.66);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+header #headerMessage {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    text-align: center;
+    font-size: 250%;
+    top: 45%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* animation: biggerMessage 0.5s cubic-bezier(.7,-0.04,.44,1.58);*/
+}
+/*Makes the message bigger on start*/
+@keyframes biggerMessage {
+    0% {
+        font-size: 250%;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        font-size: 0px;
+    }
+}
+
+/*Navbar styles*/
+#navBar {
+    position: relative;
+    width: 100%; 
+    height: 5em;
+    display: flex;
+    justify-content: space-between;
+    z-index: 4;
+}
+#navBar * {    
+    position: relative;
+}
+#logo {
+    width: 2em; 
+    height: 2em;
+}
+#leftHeader {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+    align-items: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-size: xx-large;
+    color: #1c3307;
+}
+#rightHeader {
+    display: flex;
+    justify-content: end;
+    width: 70%;
+    height: 100%;
+    font-size: x-large;
+    align-items: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
+nav {
+    width: 50%;
+    height: 100%;
+}
+ul {
+    list-style-type: none;
+}
+li {
+    display: inline-block;
+    margin: 1% 3% 0 3%;
+    opacity: 0.8;
+}
+.headerLink {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+a::before {
+    width: 50px;
+    opacity: 0;
+    transition: 300ms;
+    height: 5px;
+    content: "";
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #17250a;
+}
+a:hover::before {
+    opacity: 1;
+    top: 110%;
+    width: 70px;
+    height: 3px;
+}
+
+a:hover {
+    font-size: xx-large;
+}
+#hamburger {
+    display: none;
+}
+#hamburgerCheckbox {
+    display: none;
+}
+
+@media only screen and (max-width: 1230px) { 
+    nav {
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 880px) { 
+    nav {
+        width: 90%;
+    }
+}
+.scrolled {
+    background-color: rgb(170, 202, 176);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.scrolled .headerLink {
+    color: black;
+}
+
+
+/*Footer*/
+
+
+footer {
+    position: absolute;
+    height: 42em;
+    left: 0;
+    width: 100%;
+    background-color: rgb(40, 63, 44);
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+#footerContent {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    color: rgb(193, 215, 197);
+}
+.footerCard {
+    height: 80%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.footerCardTitle {
+    height: 10%;
+    margin-bottom: 10px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
+.footerCardContent {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    height: 10%;
+    width: 100%;
+    font-weight: 300;
+    font-size: 1.2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
+.footerCard:nth-child(3) {
+    width: 40%;
+}
+form {
+    width: 100%;
+}
+#email {
+    width: 60%;
+    height: 25px;
+    border-radius: 0.25rem;
+    padding: 0.7rem 0.7rem;
+    border: 0.1px;
+    top: -2px;
+    position: relative;
+}
+#submit {
+    font: 1.25rem sans-serif;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+    background-color: rgb(193, 215, 197);
+    color: rgb(40, 63, 44);
+    border: 1px;
+    transition: 200ms;
+}
+#submit:hover {
+    background-color: rgb(154, 171, 157);
+}
+#footerCopyright {
+    height: 40%;
+    width: 100%;
+    background-color: rgb(28, 43, 30);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: 0;
+}
+#footerCopyright div img {
+    height: 5em;
+    width: 5em;
+}
+#footerLogo {
+    height: 50%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#footerTitle {
+    height: 10%;
+    width: 30%;
+    text-align: center;
+    color: rgb(181,170,167);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-size: 1.5em;
+}
+#footerSocials {
+    height: 30%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+.fa {
+    padding: 15px;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 100%;
+    margin: 10px 2px;
+    background: rgb(181,170,167);
+    color: rgb(28, 43, 30);
+    transition: 300ms;
+}
+.fa:hover {
+    opacity: 0.7;
+    padding: 16.5px;
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+}
+hr {
+    width: 95%;
+    border: 1px solid rgb(40, 63, 44);
+}
+#footerCopyrights {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: rgba(181, 170, 167, 0.744);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+/*Body*/
+#event {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    margin: 0 0 0 0;
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(14, 41, 23);
+}
+#eventLeft {
+    width: 30%;
+    padding: 5%;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 200%;
+    font-family: 'Georgia Pro Condensed', 'Times New Roman', Times, serif;
+}
+#eventLeft span:nth-child(2) {
+    font-size: 300%;
+    transition: 300ms;
+}
+#eventLeft span:nth-child(2):hover {
+    font-size: 310%;
+    cursor: pointer;
+}
+#eventRight {
+    width: 40%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#eventRight img {
+    width: 615px;
+    height: 410px;
+    transition: 300ms;
+    cursor: pointer;
+}
+#eventRight img:hover {
+    width: 650px;
+    height: 433.33px;
+}
+
+
+@keyframes navBarColor {
+    from {
+        background-color: #00000000;
+    }
+    to {
+        background-color: rgb(170, 202, 176);
+    }
+}
+
+@keyframes navBarColorFadeOut {
+    from {
+        background-color: rgb(170, 202, 176);
+    }
+    to {
+        background-color: #00000000;
+    }
+}
+/*container styles*/
+.container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: 0 0 0 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(57, 69, 65);
+    color: rgb(255, 255, 255);
+}
+
+.card1 {
+    width: 30%;
+    height: 80%;
+    top: -40%;
+    display: flex;
+    flex-direction: column;
+}
+.card2 {
+    width: 40%;
+    height: 80%;
+    top: -40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.article {
+    width:initial;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-bottom: 0.5px #272c22 solid;
+    border-top: 0.5px #272c22 solid;
+    padding: 4%;
+    font-family: 'Signika Negative';
+    transition: 300ms;
+}
+
+.article:hover {
+    background-color: rgb(29, 36, 26);
+}
+
+.small {
+    height: 25%;
+}
+
+.small .creation {
+    height: 20%;
+    width: 100%;
+    font-size: 10px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+}
+
+.small .content {
+    height: 80%;
+    width: 100%;
+    font-size: 20px;
+}
+
+.big{
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.big .creation {
+    height: 10%;
+    width: 100%;
+    font-size: 10px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+}
+
+.big .content {
+    height: 20%;
+    width: 100%;
+    font-size: 20px;
+}
+
+.big img {
+    height: 70%;
+    width: 100%;
+    font-size: 20px;
+}
+
+
+/*Exclusive styles to pages not home page*/
+#message {
+    font-size: 900%;
+    color: #3d4039; /*272c22*/
+    font-family: 'BioRhyme';
+    bottom: -19%;
+    position: relative;
+    z-index: 1;
+}
+#introductory {
+    position: absolute;
+    height: 16.5%;
+    width: 100%;
+    font-size: 2.05em;
+    color: #5b754b;
+    font-family: 'Cormorant Garamond';
+    font-weight:900;
+    top: 40%;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: -2;
+}
+
+
+
+
+/*Exclusive styles to event page*/
+#leftEventPanel, #rightEventPanel {
+    height: 90%;
+    width: 50%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    transition: 500ms;
+}
+#leftEventPanel {
+    background-image: url(images/Summit.jpg);
+}
+#rightEventPanel {
+    background-image: url(images/Game.png);
+    align-items: end;
+}
+#leftEventPanel .effect, #rightEventPanel .effect {
+    position: absolute;
+    background-color: rgb(57, 69, 65, 0.66);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+#rightEventName, #leftEventName {
+    font-size: 200%;
+    font-family: 'Signika Negative';
+    transition: 500ms;
+    margin-left: 2%;
+    margin-right: 2%;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    font-weight: bolder;
+}
+#leftEventDescription, #rightEventDescription {
+    font-size: 0%;
+    font-family: 'Signika Negative';
+    transition: 500ms;
+    margin-left: 2%;
+    margin-right: 2%;
+    position: relative;
+    z-index: 1;
+}
+#rightEventDescription {
+    margin-left: 10%;
+    text-align: right;
+}
+#leftEventDescription {
+    margin-right: 10%;
+}
+
+
+
+/*Exclusive styles to about page*/
+.topBackground {
+    width: 100%;
+    height: 13%;
+    background-color: rgb(57, 69, 65);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    font-size: 750%;
+    font-weight: 300;
+    font-family: 'Signika Negative';
+    text-transform: uppercase;
+    color: rgba(24, 30, 27, 0.388);
+}
+.bottomBackground {
+    width: 100%;
+    height: 87%;
+    background-color: rgb(245, 245, 245);
+}
+.aboutCard {
+    position: absolute;
+    top: 5%;
+    width: 50%;
+    height: 90%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+#aboutImageHolder {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    background-image: url(https://placehold.co/550x400);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+#aboutText {
+    width: 100%;
+    height: 55%;
+    font-family: Alegreya;
+    font-weight: 200;
+    color: black;
+    text-align: justify;
+}
+#aboutTeam {
+    position: relative;
+    left: -25%;
+    width: 150%;
+    height: 45%;
+    font-family: Alegreya;
+    font-weight: 200;
+    color: black;
+    bottom: -50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#aboutTeam .cardSet {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+#aboutTeam .card {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#aboutTeam .card img {
+    width: 100%;
+    height: 80%;
+}
+#aboutTeam .card .name {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+#aboutTitle {
+    font-family: Alegreya;
+    font-style: normal;
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-transform: capitalize;
+    display: inline-block;
+    color: rgb(0, 0, 0);
+}
+#aboutValues {
+    font-size: 1.25em;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    #index {
+        font-size: 200%;
+    }
+    header {
+        height: 50%;
+        width: 100%; 
+        background-position: center bottom;
+    }
+    header #headerMessage {
+        font-size: 150%;
+    };
+    
+    /*Navbar styles*/
+    #navBar {
+        position: relative;
+        width: 100%; 
+        height: 4em;
+        z-index: 5;
+    }
+    #navBar * {    
+        position: relative;
+    }
+    #logo {
+        width: 3em; 
+        height: 3em;
+    }
+    #leftHeader {
+        font-size: large;
+        left: 1.5em;
+    }
+    #rightHeader {
+        position: fixed;
+        display: inline-block;
+        width: 80%;
+        align-items: center;
+        right: 2px;
+        background-color: rgb(141, 173, 147);
+        transform: translate(150%);
+        transition: transform 0.3s ease-in-out;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
+    li {
+        opacity: 0.8;
+        height: 5em;
+        margin: 0 0 0 0;
+    }
+    .headerLink {
+        font-size: 1em;
+    }
+    .headerLink:nth-child(1) {
+        top: 3em;
+    }
+    
+    a::before {
+        width: 50px;
+        opacity: 0;
+        transition: 300ms;
+        height: 5px;
+        content: "";
+        position: absolute;
+        top: 150%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #17250a;
+    }
+    a:hover::before {
+        opacity: 1;
+        top: 110%;
+        width: 70px;
+        height: 3px;
+    }
+    a:hover {
+        font-size: 1em;
+    }
+    
+    #hamburgerCheckbox {
+        display: inline-block;
+        height: 26px;
+        width: 32px;
+        right: 5%;
+        top: 25%;
+        z-index: 1;
+        opacity: 0;
+    }
+    #hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        right: 5%;
+        top: 25%;
+        height: 26px;
+        width: 32px;
+    }
+    .line {
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #0e2431;
+        position: relative;
+    }
+    
+    .line1 {
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+    }
+    
+    .line2 {
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .line3 {
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+    }
+    
+    #navBar input[type="checkbox"]:checked ~ #hamburger .line1 {
+        transform: rotate(45deg);
+    }
+    
+    #navBar input[type="checkbox"]:checked ~ #hamburger .line2 {
+        transform: scaleY(0);
+    }
+    
+    #navBar input[type="checkbox"]:checked ~ #hamburger .line3 {
+        transform: rotate(-45deg);
+    }
+    
+    #navBar input[type="checkbox"]:checked ~ #rightHeader {
+        transform: translateX(0);
+    }
+    
+    /*event*/
+    
+    #event {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin: 0 0 0 0;
+        height: 100%;
+        max-height: 80%;
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        align-items: center;
+    }
+    #eventTop {
+        height: 2em;
+        width: 90%;
+        padding: 5%;
+        color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.4em;
+        font-family: 'Georgia Pro Condensed', 'Times New Roman', Times, serif;
+    }
+    #eventMiddle img {
+        width: 80vw;
+        height: 50vh;
+        object-fit: cover;
+        transition: 300ms;
+        cursor: pointer;
+    }
+    #eventMiddle {
+        width: 100%;
+        height: 60vh;
+        transition: 300ms;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #eventMiddle img:hover {
+        width: 80vw;
+        height: 50vh;
+    }
+    #eventBottom {
+        width: 90%;
+        padding: 5%;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 2em;
+        font-family: 'Georgia Pro Condensed', 'Times New Roman', Times, serif;
+    }
+    
+    
+    /*container styles*/
+    .container {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        margin: 0 0 0 0;
+        height: 175%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(57, 69, 65);
+        color: rgb(255, 255, 255);
+        flex-direction: column;
+    }
+    
+    .card1 {
+        width: 100%;
+        height: 100%;
+        top: -40%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    .card2 {
+        width: 100%;
+        height: 100%;
+        top: -40%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    
+    .card1, .card2 {
+        width: 90%;
+        height: 100%;
+        top: 0;
+    }
+    .article {
+        width: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-bottom: 0.5px #272c22 solid;
+        border-top: 0.5px #272c22 solid;
+        padding: 4%;
+        font-family: 'Signika Negative';
+        transition: 300ms;
+    }
+    
+    .article:hover {
+        background-color: rgb(29, 36, 26);
+    }
+    
+    .small {
+        height: 25%;
+    }
+    
+    .small .creation {
+        height: 20%;
+        width: 100%;
+        font-size: 10px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .small .content {
+        height: 80%;
+        width: 100%;
+        font-size: 15px;
+    }
+    
+    .big{
+        height: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    
+    .big .creation {
+        height: 10%;
+        width: 100%;
+        font-size: 10px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .big .content {
+        height: 20%;
+        width: 100%;
+        font-size: 20px;
+    }
+    
+    .big img {
+        height: 40%;
+        width: 100%;
+        font-size: 20px;
+    }
+    
+    #message {
+        font-size: 15vw;
+        bottom: -3vh;
+        position: relative;
+    }
+    #introductory {
+        position: absolute;
+        height: 10%;
+        width: 100%;
+        font-size: 4vw;
+        align-items: center;
+        text-align: center;
+    }
+    /*Footer*/
+    
+    
+    footer {
+        position: absolute;
+        height: 170%;
+        left: 0;
+        width: 100%;
+        background-color: rgb(40, 63, 44);
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    #footerContent {
+        height: 150%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 0;
+        color: rgb(193, 215, 197);
+    }
+    .footerCard {
+        width: 90%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .footerCardTitle {
+        height: 10%;
+        margin-bottom: 10px;
+        width: 100%;
+        font-weight: bold;
+        font-size: 2em;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    }
+    .footerCardContent {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        height: 10%;
+        width: 100%;
+        font-weight: 300;
+        font-size: 1.2em;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    }
+    .footerCard:nth-child(3) {
+        width: 90%;
+    }
+    form {
+        width: 100%;
+    }
+    #email {
+        width: 60%;
+        height: 25px;
+        border-radius: 0.25rem;
+        padding: 0.7rem 0.7rem;
+        border: 0.1px;
+        top: -2px;
+        position: relative;
+    }
+    #submit {
+        font: 1rem sans-serif;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        padding: 0.75rem 1.25rem;
+        background-color: rgb(193, 215, 197);
+        color: rgb(40, 63, 44);
+        border: 1px;
+        transition: 200ms;
+    }
+    #submit:hover {
+        background-color: rgb(154, 171, 157);
+    }
+    #footerCopyright {
+        height: 50%;
+        width: 100%;
+        background-color: rgb(28, 43, 30);
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        margin: 0;
+    }
+    #footerCopyright div img {
+        height: 5em;
+        width: 5em;
+    }
+    #footerLogo {
+        height: 50%;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #footerTitle {
+        height: 10%;
+        width: 90%;
+        text-align: center;
+        color: rgb(181,170,167);
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+        font-size: 1.5em;
+    }
+    #footerSocials {
+        height: 30%;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+    }
+    .fa {
+        padding: 15px;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 100%;
+        margin: 10px 2px;
+        background: rgb(181,170,167);
+        color: rgb(28, 43, 30);
+        transition: 300ms;
+    }
+    .fa:nth-child(2) {
+        padding-right: 19px;
+        padding-left: 19px;
+    }
+    .fa:hover {
+        opacity: 0.7;
+        padding: 16.5px;
+        font-size: 22px;
+        width: 22px;
+        height: 22px;
+    }
+    .fa:nth-child(2):hover {
+        opacity: 0.7;
+        padding: 16.5px;
+        padding-right: 21px;
+        padding-left: 21px;
+        font-size: 22px;
+        width: 22px;
+        height: 22px;
+    }
+    hr {
+        width: 95%;
+        border: 1px solid rgb(40, 63, 44);
+    }
+    #footerCopyrights {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        color: rgba(181, 170, 167, 0.744);
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    
+    /*Exclusive styles to event page*/
+    #leftEventPanel, #rightEventPanel {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        transition: 500ms;
+    }
+    #leftEventPanel {
+        background-image: url(images/Summit.jpg);
+    }
+    #rightEventPanel {
+        background-image: url(images/Game.png);
+        align-items: end;
+    }
+    #leftEventPanel .effect, #rightEventPanel .effect {
+        position: absolute;
+        background-color: rgb(57, 69, 65, 0.66);
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        cursor: pointer;
+    }
+    #rightEventName, #leftEventName {
+        font-size: 150%;
+        bottom: 25%;
+        font-family: 'Signika Negative';
+        transition: 500ms;
+        margin-left: 5%;
+        margin-right: 5%;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        font-weight: bolder;
+    }
+    #leftEventDescription, #rightEventDescription {
+        font-size: 100%;
+        font-family: 'Signika Negative';
+        transition: 500ms;
+        margin-left: 5%;
+        margin-right: 5%;
+        position: relative;
+        z-index: 1;
+        bottom: 5%;
+    }
+    #rightEventDescription {
+        margin-left: 10%;
+        text-align: right;
+    }
+    #leftEventDescription {
+        margin-right: 10%;
+    }
+    
+    /*Exclusive styles to about page*/
+    .topBackground {
+        width: 100%;
+        height: 7%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        font-size: 280%;
+        font-weight: 300;
+        font-family: 'Signika Negative';
+        text-transform: uppercase;
+        color: rgba(24, 30, 27, 0.388);
+    }
+    .bottomBackground {
+        width: 100%;
+        height: 93%;
+    }
+    .aboutCard {
+        position: absolute;
+        top: 2%;
+        width: 85%;
+        height: calc(100%-250vw);
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    #aboutImageHolder {
+        width: 100%;
+        height: 10%;
+        margin-left: 0;
+        margin-right: 0;
+        background-image: url(https://placehold.co/550x400);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    #aboutText {
+        width: 100%;
+        height: 70%;
+        font-family: Alegreya;
+        font-weight: 200;
+        color: black;
+        text-align: justify;
+        font-size: 0.9em;
+    }
+    #aboutTeam {
+        position: absolute;
+        left: 0%;
+        width: 100%;
+        height: 20%;
+        font-family: Alegreya;
+        font-weight: 200;
+        color: black;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    #aboutTeam .cardSet {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: space-around;
+    }
+    #aboutTeam .card {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    #aboutTeam .card img {
+        width: 100%;
+        height: 100%;
+    }
+    #aboutTeam .card .name {
+        width: 100%;
+        height: 20%;
+        text-align: center;
+    }
+    #aboutTitle {
+        font-family: Alegreya;
+        font-style: normal;
+        font-size: 2em;
+        font-weight: 700;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        text-transform: capitalize;
+        display: inline-block;
+        color: rgb(0, 0, 0);
+    }
+    #aboutValues {
+        font-size: 1.25em;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}

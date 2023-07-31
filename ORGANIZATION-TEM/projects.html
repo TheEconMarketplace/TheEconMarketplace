@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Econ Marketplace</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+        header {
+            height: 40%; 
+            width: 100%; 
+            margin: 0 0 0 0;
+            left: 0;
+            top: 0;
+            position: absolute;
+            z-index: 1;
+            background: #151813;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        a {
+            color: rgb(255, 255, 255);
+        }
+        .container {
+            top: 50.3%;
+            height: 110%;
+            display: flex;
+            justify-content: center;
+            z-index: 0;
+            background-color: #6f7965;
+        }
+        #leftHeader {
+            color: #62784d;
+        }
+        #introductory {
+            height: 10%;
+            color: rgb(43, 55, 36);
+        }
+        @media only screen and (max-width: 768px) {
+            .container {
+                height: 220%;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #5f6757; overflow-x: hidden;" onload="onload()">
+    <header id="header">
+        <div id="navBar">
+            <div id="leftHeader">
+                <img src="images/Logo.png" id="logo" />
+                The Econ Marketplace
+            </div>
+            <div id="rightHeader">
+                <nav>
+                    <ul>
+                        <li>
+                            <a onclick="nextpage('home.html')" class="headerLink">Home</a>
+                        </li>
+                        <li>
+                            <a onclick="nextpage('projects.html')" class="headerLink">Projects</a>
+                        </li>
+                        <li>
+                            <a onclick="nextpage('articles.html')" class="headerLink">Articles</a>
+                        </li>
+                        <li>
+                            <a onclick="nextpage('about.html')" class="headerLink">About</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div></div>
+        <span id="message">PROJECTS</span>
+    </header>
+    <div id="introductory">
+        Empowering through events that revolutionize education globally:
+    </div>
+    <div class="container">
+        <div id="leftEventPanel">
+            <div class="effect" id="effectLeft"></div>
+            <div id="leftEventName">Monthly Marketplace Summit</div>
+            <div id="leftEventDescription">Monthly marketplace summits are events or summits to be held by the TEM Team with the help of professionals, teachers, professors, and more. Each event will be held each month of the year (presuming there are 4 weeks) except for January and December. </div>
+        </div>
+        <div id="rightEventPanel">
+            <div class="effect" id="effectRight"></div>
+            <div id="rightEventName">EconQuest</div>
+            <div id="rightEventDescription">EconQuest is a game that demonstrates the basic principle of economics: supply and demand. In the future, we would also expand to more suggestions for the game. </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="circle1" style="z-index: 1;"></div>
+    <div id="circle2" style="z-index: 2;"></div>
+    <footer id="footer">
+        <div id="footerContent">
+            <div class="footerCard">
+                <div class="footerCardTitle">Contact</div>
+                <div class="footerCardContent">About</div>
+                <div class="footerCardContent">Number</div>
+            </div>
+            <div class="footerCard">
+                <div class="footerCardTitle">Company</div>
+                <div class="footerCardContent">Work Here</div>
+                <div class="footerCardContent">Legal</div>
+                <div class="footerCardContent">Privacy Policy</div>
+                <div class="footerCardContent">Terms of Service</div>
+                <div class="footerCardContent">Cookie Settings</div>
+            </div>
+            <div class="footerCard">
+                <div class="footerCardTitle">Connection</div>
+                <div class="footerCardContent">Subscribe to get the latest news</div>
+                <form>
+                    <input type="email" id="email" name="email">
+                    <button type="submit" id="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div id="footerCopyright">
+            <div id="footerLogo">
+                <img src="images/Logo.png"/>
+            </div>
+            <div id="footerTitle">The Econ Marketplace</div>
+            <div id="footerSocials">
+                <div href="#" class="fa fa-google"></div>
+                <div href="#" class="fa fa-facebook"></div>
+                <div href="#" class="fa fa-twitter"></div>
+                <div href="#" class="fa fa-instagram"></div>
+            </div>
+            <hr>
+            <div id="footerCopyrights">
+                Copyright Placeholder All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    
+    <script>
+        let rightPanel = document.getElementById("rightEventPanel");
+        let leftPanel = document.getElementById("leftEventPanel");
+        const leftEventName = document.getElementById("leftEventName");
+        const rightEventName = document.getElementById("rightEventName");
+        const leftEventDescription = document.getElementById("leftEventDescription");
+        const rightEventDescription = document.getElementById("rightEventDescription");
+        let width = window.innerWidth
+        
+        if (window.innerWidth > 768) {
+            rightPanel.addEventListener("mouseover", () => {
+                console.log("Hovering")
+                leftPanel.style.width = "20%";
+                rightPanel.style.width = "80%";
+                
+                leftEventName.style.fontSize = "0%";
+                rightEventName.style.fontSize = "400%";
+                rightEventName.style.bottom = "25%";
+                
+                rightEventDescription.style.fontSize = "150%";
+            });
+            
+            rightPanel.addEventListener("mouseout", () => {
+                leftPanel.style.width = "50%";
+                rightPanel.style.width = "50%";
+                
+                leftEventName.style.fontSize = "200%";
+                rightEventName.style.fontSize = "200%";
+                rightEventName.style.bottom = "0%";
+                
+                rightEventDescription.style.fontSize = "0%";
+            });
+            
+            leftPanel.addEventListener("mouseover", () => {
+                rightPanel.style.width = "20%";
+                leftPanel.style.width = "80%";
+                
+                leftEventName.style.fontSize = "400%";
+                leftEventName.style.bottom = "25%";
+                rightEventName.style.fontSize = "0%";
+                
+                leftEventDescription.style.fontSize = "150%";
+            });
+            
+            leftPanel.addEventListener("mouseout", () => {
+                rightPanel.style.width = "50%";
+                leftPanel.style.width = "50%";
+                
+                leftEventName.style.fontSize = "200%";
+                leftEventName.style.bottom = "0%";
+                rightEventName.style.fontSize = "200%";
+                
+                leftEventDescription.style.fontSize = "0%";
+            });
+        } else {
+        }
+        
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                rightPanel.addEventListener("mouseover", () => {
+                    console.log("Hovering")
+                    leftPanel.style.width = "20%";
+                    rightPanel.style.width = "80%";
+                    
+                    leftEventName.style.fontSize = "0%";
+                    rightEventName.style.fontSize = "400%";
+                    rightEventName.style.bottom = "25%";
+                    
+                    rightEventDescription.style.fontSize = "150%";
+                });
+                
+                rightPanel.addEventListener("mouseout", () => {
+                    leftPanel.style.width = "50%";
+                    rightPanel.style.width = "50%";
+                    
+                    leftEventName.style.fontSize = "200%";
+                    rightEventName.style.fontSize = "200%";
+                    rightEventName.style.bottom = "0%";
+                    
+                    rightEventDescription.style.fontSize = "0%";
+                });
+                
+                leftPanel.addEventListener("mouseover", () => {
+                    rightPanel.style.width = "20%";
+                    leftPanel.style.width = "80%";
+                    
+                    leftEventName.style.fontSize = "400%";
+                    leftEventName.style.bottom = "25%";
+                    rightEventName.style.fontSize = "0%";
+                    
+                    leftEventDescription.style.fontSize = "150%";
+                });
+                
+                leftPanel.addEventListener("mouseout", () => {
+                    rightPanel.style.width = "50%";
+                    leftPanel.style.width = "50%";
+                    
+                    leftEventName.style.fontSize = "200%";
+                    leftEventName.style.bottom = "0%";
+                    rightEventName.style.fontSize = "200%";
+                    
+                    leftEventDescription.style.fontSize = "0%";
+                });
+                
+            } else {
+                location.reload()
+            };
+        });
+    
+        
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
