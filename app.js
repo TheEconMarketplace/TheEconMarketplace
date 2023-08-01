@@ -141,9 +141,15 @@ if (currentURL.indexOf("home.html") === -1) {
 };
 
 
+function debounce(func, delay) {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => func.apply(this, args), delay);
+    };
+  }
 
-
-window.addEventListener("scroll", () => {
+  window.addEventListener("scroll", debounce(function() {
     if (window.innerWidth > 768) {
 
         if (window.scrollY > 0) {
@@ -223,7 +229,7 @@ window.addEventListener("scroll", () => {
             
         }
     }
-});
+}, 30));
 
 //Footer vars
 
