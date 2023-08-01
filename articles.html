@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Econ Marketplace</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+        header {
+            height: 40%; 
+            width: 100%; 
+            margin: 0 0 0 0;
+            left: 0;
+            top: 0;
+            position: absolute;
+            z-index: 1;
+            background: #151813;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        a {
+            color: rgb(255, 255, 255);
+        }
+        #leftHeader {
+            color: #62784d;
+        }
+    </style>
+</head>
+<body style="background-color: #272c22; overflow-x: hidden;" onload="onload()">
+    <header id="header">
+        <div id="navBar">
+            <div id="leftHeader">
+                <img src="images/Logo.png" id="logo" />
+                The Econ Marketplace
+            </div>
+            <div id="rightHeader">
+                <nav>
+                    <ul>
+                        <li>
+                            <a onclick="nextpage('home.html')" class="headerLink">Home</a>
+                        </li>
+                        <li>
+                            <a onclick="nextpage('projects.html')" class="headerLink">Projects</a>
+                        </li>
+                        <li>
+                            <a onclick="nextpage('articles.html')" class="headerLink">Articles</a>
+                        </li>
+                        <li>
+                            <a onclick="nextpage('about.html')" class="headerLink">About</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div></div>
+        <span id="message">ARTICLES</span>
+    
+    </header>
+    <div id="introductory">
+        Creating, mindful articles that resonate with readers' needs and aspirations.
+    </div>
+    <div class="container">
+        <div class="card1">
+            <div class="article small">
+                <div class="creation">
+                    John Doe
+                    <span>7/17/23</span>
+                </div>
+                <div class="content">Lorem ipsum dolor sit amet, id natum omnes mea, vis ex ullum movet efficiantur, quo abhorreant moderatius at. Vel erat fuisset ne.</div>
+            </div>
+            <div class="article small">
+                <div class="creation">
+                    John Doe 2
+                    <span>12/17/23</span>
+                </div>
+                <div class="content">Samsung's Galaxy Buds 2 Pro flagship earbuds are comfy, light, and now $42 off</div>
+            </div>
+            <div class="article small">
+                <div class="creation">
+                    John Doe 4
+                    <span>3/17/23</span>
+                </div>
+                <div class="content">At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias </div>
+            </div>
+            <div class="article small">
+                <div class="creation">
+                    John Doe 7
+                    <span>7/12/23</span>
+                </div>
+                <div class="content">Coming full circle, the internet's remixing of the now infamous lorem ipsum passage has officially elevated it to pop culture status.</div>
+            </div>
+        </div>
+        <div class="card2">
+            <div class="article big">
+                <img src="https://placehold.co/550x250">
+                <div class="creation">
+                    john doe 35
+                    <span>8/24/23</span>
+                </div>
+                <div class="content">Lorem ipsum dolor sit amet, id natum omnes mea, vis ex ullum movet efficiantur, quo abhorreant moderatius at. Vel erat fuisset ne.</div>
+            </div>
+            <div class="article small">
+                <div class="creation">
+                    John Doe 42
+                    <span>12/16/23</span>
+                </div>
+                <div class="content">Lorem ipsum dolor sit amet, id natum omnes mea, vis ex ullum movet efficiantur, quo abhorreant moderatius at. Vel erat fuisset ne.</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        
+        <div class="card2">
+            <div class="article big">
+                <img src="https://placehold.co/550x250">
+                <div class="creation">
+                    john doe 35
+                    <span>8/24/23</span>
+                </div>
+                <div class="content">Lorem ipsum dolor sit amet, id natum omnes mea, vis ex ullum movet efficiantur, quo abhorreant moderatius at. Vel erat fuisset ne.</div>
+            </div>
+            <div class="article small">
+                <div class="creation">
+                    John Doe 42
+                    <span>12/16/23</span>
+                </div>
+                <div class="content">Lorem ipsum dolor sit amet, id natum omnes mea, vis ex ullum movet efficiantur, quo abhorreant moderatius at. Vel erat fuisset ne.</div>
+            </div>
+        </div>
+        
+        <div class="card1">
+            <div class="article small">
+                <div class="creation">
+                    John Doe
+                    <span>7/17/23</span>
+                </div>
+                <div class="content">Lorem ipsum dolor sit amet, id natum omnes mea, vis ex ullum movet efficiantur, quo abhorreant moderatius at. Vel erat fuisset ne.</div>
+            </div>
+            <div class="article small">
+                <div class="creation">
+                    John Doe 2
+                    <span>12/17/23</span>
+                </div>
+                <div class="content">Samsung's Galaxy Buds 2 Pro flagship earbuds are comfy, light, and now $42 off</div>
+            </div>
+            <div class="article small">
+                <div class="creation">
+                    John Doe 4
+                    <span>3/17/23</span>
+                </div>
+                <div class="content">At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias </div>
+            </div>
+            <div class="article small">
+                <div class="creation">
+                    John Doe 7
+                    <span>7/12/23</span>
+                </div>
+                <div class="content">Coming full circle, the internet's remixing of the now infamous lorem ipsum passage has officially elevated it to pop culture status.</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="card1">
+            <div class="article small">
+                <div class="creation">
+                    John Doe
+                    <span>7/17/23</span>
+                </div>
+                <div class="content">Lorem ipsum dolor sit amet, id natum omnes mea, vis ex ullum movet efficiantur, quo abhorreant moderatius at. Vel erat fuisset ne.</div>
+            </div>
+            <div class="article small">
+                <div class="creation">
+                    John Doe 2
+                    <span>12/17/23</span>
+                </div>
+                <div class="content">Samsung's Galaxy Buds 2 Pro flagship earbuds are comfy, light, and now $42 off</div>
+            </div>
+            <div class="article small">
+                <div class="creation">
+                    John Doe 4
+                    <span>3/17/23</span>
+                </div>
+                <div class="content">At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias </div>
+            </div>
+            <div class="article small">
+                <div class="creation">
+                    John Doe 7
+                    <span>7/12/23</span>
+                </div>
+                <div class="content">Coming full circle, the internet's remixing of the now infamous lorem ipsum passage has officially elevated it to pop culture status.</div>
+            </div>
+        </div>
+        <div class="card2">
+            <div class="article big">
+                <img src="https://placehold.co/550x250">
+                <div class="creation">
+                    john doe 35
+                    <span>8/24/23</span>
+                </div>
+                <div class="content">Lorem ipsum dolor sit amet, id natum omnes mea, vis ex ullum movet efficiantur, quo abhorreant moderatius at. Vel erat fuisset ne.</div>
+            </div>
+            <div class="article small">
+                <div class="creation">
+                    John Doe 42
+                    <span>12/16/23</span>
+                </div>
+                <div class="content">Lorem ipsum dolor sit amet, id natum omnes mea, vis ex ullum movet efficiantur, quo abhorreant moderatius at. Vel erat fuisset ne.</div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <!--onmouseover="document.body.style.overflow='auto'"
+    onmouseout="document.body.style.overflow='hidden'"-->
+    
+    <div id="circle1" style="z-index: 1;"></div>
+    <div id="circle2" style="z-index: 2;"></div>
+    <footer id="footer">
+        <div id="footerContent">
+            <div class="footerCard">
+                <div class="footerCardTitle">Contact</div>
+                <div class="footerCardContent">About</div>
+                <div class="footerCardContent">Number</div>
+            </div>
+            <div class="footerCard">
+                <div class="footerCardTitle">Company</div>
+                <div class="footerCardContent">Work Here</div>
+                <div class="footerCardContent">Legal</div>
+                <div class="footerCardContent">Privacy Policy</div>
+                <div class="footerCardContent">Terms of Service</div>
+                <div class="footerCardContent">Cookie Settings</div>
+            </div>
+            <div class="footerCard">
+                <div class="footerCardTitle">Connection</div>
+                <div class="footerCardContent">Subscribe to get the latest news</div>
+                <form>
+                    <input type="email" id="email" name="email">
+                    <button type="submit" id="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div id="footerCopyright">
+            <div id="footerLogo">
+                <img src="images/Logo.png"/>
+            </div>
+            <div id="footerTitle">The Econ Marketplace</div>
+            <div id="footerSocials">
+                <div href="#" class="fa fa-google"></div>
+                <div href="#" class="fa fa-facebook"></div>
+                <div href="#" class="fa fa-twitter"></div>
+                <div href="#" class="fa fa-instagram"></div>
+            </div>
+            <hr>
+            <div id="footerCopyrights">
+                Copyright Placeholder All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script>
+        var containers = document.getElementsByClassName('container');
+        var containersArray = Array.from(containers);
+        if (window.innerWidth > 768) {
+            for (var i = 0; i < containersArray.length; i++) {
+                var container = containersArray[i];
+                var topPosition = 56.4+(i*110)
+                topPosition = topPosition.toString()+"%"
+                container.style.top = topPosition
+            }
+        } else {
+            for (var i = 0; i < containersArray.length; i++) {
+                var container = containersArray[i];
+                var topPosition = 50+(i*175)
+                topPosition = topPosition.toString()+"%"
+                container.style.top = topPosition
+            }
+        }
+        
+        window.addEventListener("resize", () => {
+            
+            if (window.innerWidth > 768) {
+                for (var i = 0; i < containersArray.length; i++) {
+                    var container = containersArray[i];
+                    var topPosition = 56.4+(i*110)
+                    topPosition = topPosition.toString()+"%"
+                    container.style.top = topPosition
+                }
+            } else {
+                for (var i = 0; i < containersArray.length; i++) {
+                    var container = containersArray[i];
+                    var topPosition = 50+(i*175)
+                    topPosition = topPosition.toString()+"%"
+                    container.style.top = topPosition
+                }
+            }
+            
+        });
+        
+        
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
